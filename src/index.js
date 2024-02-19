@@ -1,7 +1,7 @@
 // v18.x
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import "./index.css";
 import App from "./App";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
@@ -13,9 +13,10 @@ export const reRenderUI = () => {
       <App {...{ a: "1", b: 2 }}>
         <span>span</span>
       </App> */}
-      <App a="1" b={2}>
+      {/* <App a="1" b={2}>
         <span>span</span>
-      </App>
+      </App> */}
+      <App />
     </ErrorBoundary>
   );
 };

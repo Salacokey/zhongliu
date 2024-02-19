@@ -1,10 +1,8 @@
-import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
-import Index from "./views/Index";
-import Foo from "./views/Foo";
-import Bar from "./views/Bar";
-import Abc from "./views/Abc";
-import Line from "./views/Line";
-import Lei from "./views/Lei";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { lazyload } from "./utils/lazyload";
+import Login from "./views/Login";
+import Lizi from "./views/Lizi";
+const Layout = lazyload("Layout");
 const App = () => (
   <div>
     <BrowserRouter>
@@ -34,12 +32,10 @@ const App = () => (
         BAR
       </NavLink> */}
       <Routes>
-        <Route path="/index" element={<Index />}></Route>
-        <Route path="/foo" element={<Foo />}></Route>
-        <Route path="/bar/:id" element={<Bar />}></Route>
-        <Route path="/bar/abc" element={<Abc />}></Route>
-        <Route path="/line/:id" element={<Line />}></Route>
-        <Route path="/lei" element={<Lei />}></Route>
+        <Route path="/" element={<Navigate to="/login" />}></Route>
+        <Route path="/layout/*" element={<Layout />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/lizi" element={<Lizi />}></Route>
       </Routes>
     </BrowserRouter>
   </div>
